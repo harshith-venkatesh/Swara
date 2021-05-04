@@ -14,10 +14,13 @@ export const VideoPlayer = () => {
   console.log({ listedVideos })
   const selectedVideo = listedVideos.find((video) => video._id === id)
   console.log({ selectedVideo })
-  if (selectedVideo === undefined) navigate(`/videos`)
+  if (selectedVideo === undefined) {
+    console.log('what')
+    navigate(`/videos`)
+  }
   return (
     <div>
-      {selectedVideo?.length !== 0 && (
+      {selectedVideo && (
         <>
           <div className='single__video__container'>
             <ReactPlayer

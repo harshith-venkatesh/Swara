@@ -9,8 +9,9 @@ export const VideoListing = () => {
   const { videoState, videoDispatch } = useVideo()
   console.log(videoState)
   const listedVideos = videoState?.videos
+
   useEffect(() => {
-    ;(async function () {
+    ;(async () => {
       try {
         if (videoState?.videos.length === 0) {
           setIsLoading(true)
@@ -27,7 +28,10 @@ export const VideoListing = () => {
         setIsLoading(false)
       }
     })()
-  }, [])
+    return () => {
+      console.log('Video Listing rendered')
+    }
+  }, [videoState, videoDispatch])
 
   return (
     <div>
