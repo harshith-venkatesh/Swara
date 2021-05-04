@@ -14,17 +14,13 @@ export const GenerateHeader = ({ icon, title }) => {
 export const SideNavBar = () => {
   return (
     <div className='custom__navbar'>
-      <NavLink
-        className='navLink'
-        to='/home'
-        activeClassName='navLink selected'
-      >
+      <NavLink className='navLink' to='/home' activeClassName='navLink--select'>
         <GenerateHeader icon='fa fa-home' title='Home' />
       </NavLink>
       <NavLink
         className='navLink'
         to='/videos'
-        activeClassName='navLink selected'
+        activeClassName='navLink--select'
         end
       >
         <GenerateHeader icon='fa fa-play' title='Videos' />
@@ -32,7 +28,7 @@ export const SideNavBar = () => {
       <NavLink
         className='navLink'
         to='/videos/liked'
-        activeClassName='navLink selected'
+        activeClassName='navLink--select'
         end
       >
         <GenerateHeader icon='fa fa-thumbs-o-up' title='Liked Videos' />
@@ -40,7 +36,7 @@ export const SideNavBar = () => {
       <NavLink
         className='navLink'
         to='/videos/watch'
-        activeClassName='navLink selected'
+        activeClassName='navLink--select'
         end
       >
         <GenerateHeader icon='fa fa-clock-o' title='Watch Later' />
@@ -48,14 +44,14 @@ export const SideNavBar = () => {
       <NavLink
         className='navLink'
         to='/videos/history'
-        activeClassName='navLink selected'
+        activeClassName='navLink--select'
       >
         <GenerateHeader icon='fa fa-history' title='History' />
       </NavLink>
       <NavLink
         className='navLink'
         to='/playlists'
-        activeClassName='navLink selected'
+        activeClassName='navLink--select'
         end
       >
         <GenerateHeader icon='fa fa-list' title='My Playlist' />

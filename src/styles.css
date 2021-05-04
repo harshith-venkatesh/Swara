@@ -17,7 +17,8 @@ body {
 .video__container {
 	display: grid;
 	margin: 0 auto;
-	grid-template-columns: repeat(2, 1fr);
+	padding: 1rem 2rem;
+	grid-template-columns: repeat(3, 1fr);
 	grid-gap: 2rem;
 }
 
@@ -35,6 +36,9 @@ body {
 	position: relative;
 }
 
+.single__video__container{
+	height: 30rem;
+}
 .product__card___body {
 	flex-grow: 1;
 }
@@ -113,7 +117,7 @@ body {
 	text-decoration: none;
 	color: black;
 }
-.selected {
+.navLink--select {
   font-weight: 900;
   color: var(--primary-color);
 }

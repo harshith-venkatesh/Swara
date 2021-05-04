@@ -2,22 +2,22 @@ import { useState } from 'react'
 
 export const SearchCard = () => {
   const [searchParam, setSearchParam] = useState('')
-  //const { productsDispatch } = useProducts()
-  const searchProducts = () => {
-    // productsDispatch({
+  //const { VideosDispatch } = useVideos()
+  const searchVideos = () => {
+    // VideosDispatch({
     //   type: SEARCH_PRODUCT,
     //   value: searchParam.toLowerCase(),
     // })
   }
 
-  const searchProductsOnEnter = (e) => {
+  const searchVideosOnEnter = (e) => {
     if (e.key === 'Enter') {
-      searchProducts()
+      searchVideos()
     }
   }
   const clearSearchResult = () => {
     setSearchParam('')
-    //productsDispatch({ type: SEARCH_PRODUCT, value: '' })
+    //VideosDispatch({ type: SEARCH_PRODUCT, value: '' })
   }
   return (
     <>
@@ -26,10 +26,10 @@ export const SearchCard = () => {
           <input
             className='input'
             type='text'
-            placeholder='Search For Products'
+            placeholder='Search For Videos'
             value={searchParam}
             onChange={(e) => setSearchParam(e.target.value)}
-            onKeyDown={searchProductsOnEnter}
+            onKeyDown={searchVideosOnEnter}
           ></input>
           {searchParam.length !== 0 && (
             <div className='btn--clear'>
@@ -37,7 +37,7 @@ export const SearchCard = () => {
             </div>
           )}
         </div>
-        <button className='btn--search' onClick={searchProducts}>
+        <button className='btn--search' onClick={searchVideos}>
           <i className='fa fa-search'></i>
         </button>
       </div>

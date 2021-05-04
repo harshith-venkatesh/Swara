@@ -1,6 +1,6 @@
 export const videosList = [
   {
-    _id: 1,
+    _id: '1',
     videoId: 'EEM6y1Z1Dj8',
     title: 'SCAM 1992 Theme',
     views: '208K views',
@@ -12,7 +12,7 @@ export const videosList = [
     channel: '_thetablaguy'
   },
   {
-    _id: 2,
+    _id: '2',
     videoId: 'YGrFroqhhnE',
     title: 'Teri Mitti',
     views: '718K views',
@@ -24,7 +24,7 @@ export const videosList = [
     channel: '_thetablaguy'
   },
   {
-    _id: 3,
+    _id: '3',
     videoId: 'OnTDSLzBO8E',
     title: 'Maa Tujhe Salam',
     views: '908K views',
@@ -36,7 +36,7 @@ export const videosList = [
     channel: '_thetablaguy'
   },
   {
-    _id: 4,
+    _id: '4',
     videoId: 'bmzD8SOnoKg',
     title: 'Divine Flute',
     views: '086K views',
@@ -48,7 +48,7 @@ export const videosList = [
     channel: 'Saregama'
   },
   {
-    _id: 5,
+    _id: '6',
     videoId: 'IHQSUzyp62k',
     title: 'Sur Sagar Sajan',
     views: '98K views',
