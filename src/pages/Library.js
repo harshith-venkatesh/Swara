@@ -3,7 +3,7 @@ import { VideoCard } from '../components'
 import { useVideo } from '../context/VideoContext'
 
 export const Library = () => {
-  const { videoState, videoDispatch } = useVideo()
+  const { videoState } = useVideo()
   return (
     <div>
       <>
