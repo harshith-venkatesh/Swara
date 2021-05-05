@@ -21,13 +21,13 @@ export default function App() {
 
       <div className='component-container'>
         <Routes>
-          <Route path='/' element={<VideoListing />} />
-          <Route path='/home' element={<Home />} />
+          <Route path='/' element={<Home />} />
           <Route path='/videos' element={<VideoListing />} />
           <Route path='/videos/:id' element={<VideoPlayer />} />
           <Route path='/videos/library' element={<Library />} />
           <Route path='/playlists' element={<PlayLists />} />
           <Route path='/playlists/:id' element={<SinglePlayList />} />
+          <Route path='*' element={<Home />} />
         </Routes>
       </div>
     </div>

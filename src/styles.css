@@ -200,6 +200,16 @@ body {
 	color: white;
 }
 
+.btn-outline-success:hover {
+	background-color: var(--success-color);
+	color: white;
+}
+
+.btn-outline-success:disabled {
+	background-color: var(--success-color);
+	color: white;
+}
+
 
 @-webkit-keyframes spin {
 	0% {
