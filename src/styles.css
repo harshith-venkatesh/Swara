@@ -121,7 +121,7 @@ body {
 
 .navLink {
 	text-decoration: none;
-	color:var(--gray-100);
+	color:var(--gray-300);
 	padding: 0 0.5rem;
 }
 .navLink--select {
@@ -424,14 +424,19 @@ body {
   cursor: pointer;
 }
 
+.bottom__navigation__container{
+	display: none;
+}
+
 @media (max-width: 600px) {
 	.home__container{
 		display: flex;
 		flex-direction: column;
 		justify-content: flex-start;
+		width:100%;
 	}
 	.home__container__image{
-		width:100vw;
+		width:98vw;
 	}
 
 	.single__video__container{
@@ -479,22 +484,34 @@ body {
 		padding: 0.5rem 0.5rem;
 	}
 
+	.bottom__navigation__container {
+		background-color: var(--primary-color);
+		color: var(--secondary-color);
+		position: fixed;
+		bottom: 0;
+		z-index:2;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-around;
+		width: 100%;
+		padding: 0.5rem;
+	}
 	
+	.bottom-navigation-container a {
+		color: var(--secondary-color);
+		font-size: 1.25rem;
+	}
 
 
 	.navbar-container {
 		display: flex;
-		flex-direction: column;
-	}
-
-	.navbar__links{
-		padding: 0 0.5rem;
 	}
 
 	.header-logo {
 		display: flex;
 		justify-content: flex-start;
 	}
+
 
 
 	.video__player__actions{
@@ -504,5 +521,8 @@ body {
 	.icons__container {
 		display: flex;
 		justify-content: space-around;
+	}
+	.navbar__links a{
+		display:none;
 	}
 }

@@ -8,7 +8,7 @@ import {
   VideoListing,
   VideoPlayer
 } from './pages'
-import { NavBar } from './components'
+import { MobileNavBar, NavBar } from './components'
 import { Library } from './pages/Library'
 
 export default function App() {
@@ -30,6 +30,7 @@ export default function App() {
           <Route path='*' element={<Home />} />
         </Routes>
       </div>
+      <MobileNavBar />
     </div>
   )
 }
