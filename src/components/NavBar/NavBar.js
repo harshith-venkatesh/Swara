@@ -1,7 +1,6 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 import { musicLogo } from '../../constants/Image'
-import { SearchCard } from '../Search/Search'
 import './navbar.css'
 export const NavBar = () => {
   return (
@@ -13,13 +12,38 @@ export const NavBar = () => {
             <div className='header__title'>Swara</div>
           </div>
         </NavLink>
-        <SearchCard />
-        <div>
-          <img
-            className='video__card__image__avatar'
-            src='https://media-exp1.licdn.com/dms/image/C4D03AQF6ao-JV-_YcQ/profile-displayphoto-shrink_100_100/0/1593626128287?e=1625702400&v=beta&t=35lA320SnQguHLeHFkb3XaMzYAFOzpPAKAKf5ntnJrs'
-            alt='Harshith'
-          />
+        <div className='navbar__links'>
+          <NavLink
+            className='navLink'
+            to='/home'
+            activeClassName='navLink--select'
+          >
+            Home
+          </NavLink>
+          <NavLink
+            className='navLink'
+            to='/videos'
+            activeClassName='navLink--select'
+            end
+          >
+            Explore
+          </NavLink>
+          <NavLink
+            className='navLink'
+            to='/videos/library'
+            activeClassName='navLink--select'
+            end
+          >
+            Library
+          </NavLink>
+          <NavLink
+            className='navLink'
+            to='/playlists'
+            activeClassName='navLink--select'
+            end
+          >
+            My Playlist
+          </NavLink>
         </div>
       </nav>
     </React.Fragment>
