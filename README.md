@@ -1,3 +1,20 @@
+Video Library for music enthusiasts to check for videos that helps in enhancing their music skills/develop new hobby on music
+Link: [Music Library] (http://swara.netlify.app/)
+Until Now features covered:
+
+Check list for current Project
+- [X] Videos Rendering
+- [X] Liked Videos category
+- [X] Watch Later Videos category
+- [X] Search for Videos
+- [X] Home Page
+- [X] Data Fetch using mock server (Miraje JS)
+- [X] Individual Video details
+- [X] Routing
+- [ ] Add to Playlist 
+- [ ] Operations on Playlists
+- [ ] Authentication
+- [ ] Backend Integration
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
