@@ -4,7 +4,6 @@ import { useVideo } from '../context/VideoContext'
 
 export const History = () => {
   const { videoState } = useVideo()
-  console.log(videoState)
   const listedVideos = videoState?.historyVideos
 
   return (
