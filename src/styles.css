@@ -22,6 +22,14 @@ body {
 	grid-gap: 2rem;
 }
 
+.library__container{
+	display: grid;
+	margin: 0 auto;
+	padding: 1rem 2rem;
+	grid-template-columns: repeat(4, 1fr);
+	grid-gap: 2rem;
+}
+
 .product__card {
 	text-align: left;
 	color: #4b5563;
@@ -37,7 +45,11 @@ body {
 }
 
 .single__video__container{
-	height: 30rem;
+	height: 30vw;
+	max-width: 80vw;
+	width: 100%;
+	padding: 2rem;
+	margin: 0 auto;
 }
 .product__card___body {
 	flex-grow: 1;
@@ -72,12 +84,6 @@ body {
 	height: 10rem;
 	width: 100%;
 }
-
-.video__container {
-	width: 100%;
-	margin: auto;
-}
-
 
 .custom__navbar{
   display: flex;
@@ -115,11 +121,12 @@ body {
 
 .navLink {
 	text-decoration: none;
-	color: black;
+	color:var(--gray-100);
+	padding: 0 0.5rem;
 }
 .navLink--select {
   font-weight: 900;
-  color: var(--primary-color);
+  color: white;
 }
 
 
@@ -236,7 +243,6 @@ body {
 	padding: 0.5rem 2rem;
 }
 
-
 .Toastify__close-button {
 	color: var(--grey-500);
 }
@@ -270,7 +276,7 @@ body {
 
 .btn--clear {
 	position: absolute;
-	top: 1rem;
+	top: 0.8rem;
 	border-radius: 50%;
 	width: 1.5rem;
 	height: 1.5rem;
@@ -302,19 +308,168 @@ body {
 	font-size: 6rem;
 }
 
+.listing__title{
+	margin: auto 0;
+}
 
+.home__container{
+	height: 100vh;
+	width:100vw;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	background-image: url(home.svg) no-repeat center center fixed;
+	background-size: 100% 10rem;
+	background-size: cover;
+}
+
+.home__container__image{
+	width:60vw;
+}
+
+.home__container__content {
+	margin-top: 5rem;
+	width:40vw;
+}
+.home__container__content h1{
+	font-size: 2rem;
+}
+
+.video__player__footer{
+  display: flex;
+	justify-content: space-between;
+	max-width: 80vw;
+    width: 100%;
+    padding: 0 2rem;
+    margin: 0 auto;
+}
+
+.video__player__actions{
+	display: flex;
+	margin: auto;
+	justify-content: space-between;
+	width: 100%;
+	align-items: center;
+}
+
+.video__player__image__div{
+  position: relative;
+}
+.video__player__image__div::before{
+  
+  content: attr(data-duration);
+  position: absolute;
+  background-color: rgba(0,0,0,0.85);
+  color:white;
+  bottom:1rem;
+  right:1rem;
+  padding: 0.1rem 0.3rem;
+  border-radius: 0.3rem;
+  font-size: 0.9rem;
+}
+
+.video__player__image{
+  width:100%;
+  height: 100%;
+  margin: 0 auto;
+  cursor: pointer;
+  background-color: #aaa;
+  
+}
+
+.video__player__image__avatar{
+  margin: 0.1rem 1rem;
+  border-radius: 50%;
+  width: 4rem;
+  height: 4rem;
+  background-color: #aaa;
+}
+
+.video__player__details{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: 0.1rem;
+}
+
+.video__player__details--title{
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 0.3rem;
+}
+
+.video__player__details--channel{
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 0.3rem;
+  color: #555;
+  transition: color 150ms;
+}
+.video__player__details--metadata >span {
+  color: #333;
+  margin-right: 1rem;
+}
+.video__player__details--channel:hover{
+  color: #111;
+  cursor: pointer;
+}
 
 @media (max-width: 600px) {
+	.home__container{
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
+	}
+	.home__container__image{
+		width:100vw;
+	}
+
+	.single__video__container{
+		
+		max-width: 90vw;
+		width: 100%;
+		height: 300px;
+		padding: 2rem;
+		margin: 0 auto;
+	}
+
+	.video__player__footer{
+		padding: 0;
+	}
+	.home__container__content {
+		margin-top: 3rem;
+		width:40vw;
+	}
+	.home__container__content h1{
+		font-size: 1rem;
+	}
+
 	.ecomm__container {
 		width: 100%;
 	}
 
+	.listing__title{
+		display: none;
+	}
 	.video__container {
 		display: grid;
 		margin: 0 auto;
 		grid-template-columns: repeat(1, 1fr);
 		margin: auto;
 	}
+	.library__container{
+		display: grid;
+	margin: 0 auto;
+	padding: 1rem 1rem;
+	grid-template-columns: repeat(1, 1fr);
+	grid-gap: 1rem;
+	}
+
+	.page__title {
+		padding: 0.5rem 0.5rem;
+	}
+
+	
 
 
 	.navbar-container {
@@ -322,9 +477,18 @@ body {
 		flex-direction: column;
 	}
 
+	.navbar__links{
+		padding: 0 0.5rem;
+	}
+
 	.header-logo {
 		display: flex;
 		justify-content: flex-start;
+	}
+
+
+	.video__player__actions{
+		flex-direction: column;
 	}
 
 	.icons__container {

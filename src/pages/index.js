@@ -1,6 +1,6 @@
 export { History } from './History'
 export { Home } from './Home'
-export { LikedVideos } from './LikedVideos'
+export { Library } from './Library'
 export { PlayLists } from './PlayLists'
 export { SinglePlayList } from './SinglePlayList'
 export { VideoListing } from './VideoListing'

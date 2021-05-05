@@ -1,22 +1,28 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { VideoCard } from '../components'
+import { SearchCard } from '../components/Search/Search'
 import { errorToast } from '../components/Toast/Toast'
 import { DATA_FROM_SERVER } from '../constants/reducerConstants'
 import { useVideo } from '../context/VideoContext'
 export const VideoListing = () => {
   const [isLoading, setIsLoading] = useState(false)
   const { videoState, videoDispatch } = useVideo()
-  console.log(videoState)
-  const listedVideos = videoState?.videos
-
+  const searchResult = (videos, search) => {
+    if (search) {
+      videos = [...videos].filter((video) =>
+        video.title.toLowerCase().includes(search)
+      )
+    }
+    return videos
+  }
+  const listedVideos = searchResult(videoState?.videos, videoState.keyword)
   useEffect(() => {
     ;(async () => {
       try {
         if (videoState?.videos.length === 0) {
           setIsLoading(true)
           const response = await axios.get('/api/videos')
-          console.log(response)
           videoDispatch({
             type: DATA_FROM_SERVER,
             payload: response.data.videosList
@@ -39,7 +45,10 @@ export const VideoListing = () => {
         <div className='page__loader'></div>
       ) : (
         <>
-          <div className='page__title'>Recommended</div>
+          <div className='page__title'>
+            <div className='listing__title'>Recommended</div>
+            <SearchCard />
+          </div>
           <div className='video__container'>
             {listedVideos.length === 0 ? (
               <div>No Videos Found</div>

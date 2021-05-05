@@ -1,13 +1,15 @@
 import { useState } from 'react'
+import { SEARCH_VIDEO } from '../../constants/reducerConstants'
+import { useVideo } from '../../context/VideoContext'
 
 export const SearchCard = () => {
   const [searchParam, setSearchParam] = useState('')
-  //const { VideosDispatch } = useVideos()
+  const { videoDispatch } = useVideo()
   const searchVideos = () => {
-    // VideosDispatch({
-    //   type: SEARCH_PRODUCT,
-    //   value: searchParam.toLowerCase(),
-    // })
+    videoDispatch({
+      type: SEARCH_VIDEO,
+      payload: searchParam.toLowerCase()
+    })
   }
 
   const searchVideosOnEnter = (e) => {
@@ -17,7 +19,7 @@ export const SearchCard = () => {
   }
   const clearSearchResult = () => {
     setSearchParam('')
-    //VideosDispatch({ type: SEARCH_PRODUCT, value: '' })
+    videoDispatch({ type: SEARCH_VIDEO, payload: '' })
   }
   return (
     <>

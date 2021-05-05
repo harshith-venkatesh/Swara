@@ -9,7 +9,9 @@ export const videosList = [
       'https://yt3.ggpht.com/ytc/AAUvwnjK23ViIR6v1NJDUeVNlld4UZjeYXR7qWh3epEOgg=s48-c-k-c0x00ffffff-no-rj',
     channelImage:
       'https://yt3.ggpht.com/ytc/AAUvwnh5mNH_n4-Fmwqy99iSBlYRDnPJgvhkOWHiNMvrGw=s68-c-k-c0x00ffffff-no-rj',
-    channel: '_thetablaguy'
+    channel: '_thetablaguy',
+    description:
+      '"After all my years of doing instrumental music I still like just a simple instrumental song with a nice catchy melody and an opportunity to play a solo over a harmonic structure." ~ Stanley Clarke'
   },
   {
     _id: '2',
@@ -21,7 +23,9 @@ export const videosList = [
       'https://yt3.ggpht.com/ytc/AAUvwnjK23ViIR6v1NJDUeVNlld4UZjeYXR7qWh3epEOgg=s48-c-k-c0x00ffffff-no-rj',
     channelImage:
       'https://yt3.ggpht.com/ytc/AAUvwnh5mNH_n4-Fmwqy99iSBlYRDnPJgvhkOWHiNMvrGw=s68-c-k-c0x00ffffff-no-rj',
-    channel: '_thetablaguy'
+    channel: '_thetablaguy',
+    description:
+      '"After all my years of doing instrumental music I still like just a simple instrumental song with a nice catchy melody and an opportunity to play a solo over a harmonic structure." ~ Stanley Clarke'
   },
   {
     _id: '3',
@@ -33,7 +37,9 @@ export const videosList = [
       'https://yt3.ggpht.com/ytc/AAUvwnjK23ViIR6v1NJDUeVNlld4UZjeYXR7qWh3epEOgg=s48-c-k-c0x00ffffff-no-rj',
     channelImage:
       'https://yt3.ggpht.com/ytc/AAUvwnh5mNH_n4-Fmwqy99iSBlYRDnPJgvhkOWHiNMvrGw=s68-c-k-c0x00ffffff-no-rj',
-    channel: '_thetablaguy'
+    channel: '_thetablaguy',
+    description:
+      '"After all my years of doing instrumental music I still like just a simple instrumental song with a nice catchy melody and an opportunity to play a solo over a harmonic structure." ~ Stanley Clarke'
   },
   {
     _id: '4',
@@ -45,7 +51,9 @@ export const videosList = [
       'https://yt3.ggpht.com/ytc/AAUvwnjK23ViIR6v1NJDUeVNlld4UZjeYXR7qWh3epEOgg=s48-c-k-c0x00ffffff-no-rj',
     channelImage:
       'https://yt3.ggpht.com/ytc/AAUvwnh5mNH_n4-Fmwqy99iSBlYRDnPJgvhkOWHiNMvrGw=s68-c-k-c0x00ffffff-no-rj',
-    channel: 'Saregama'
+    channel: 'Saregama',
+    description:
+      '"After all my years of doing instrumental music I still like just a simple instrumental song with a nice catchy melody and an opportunity to play a solo over a harmonic structure." ~ Stanley Clarke'
   },
   {
     _id: '6',
@@ -57,6 +65,8 @@ export const videosList = [
       'https://yt3.ggpht.com/ytc/AAUvwnjK23ViIR6v1NJDUeVNlld4UZjeYXR7qWh3epEOgg=s48-c-k-c0x00ffffff-no-rj',
     channelImage:
       'https://yt3.ggpht.com/ytc/AAUvwnh5mNH_n4-Fmwqy99iSBlYRDnPJgvhkOWHiNMvrGw=s68-c-k-c0x00ffffff-no-rj',
-    channel: 'Saregama'
+    channel: 'Saregama',
+    description:
+      '"After all my years of doing instrumental music I still like just a simple instrumental song with a nice catchy melody and an opportunity to play a solo over a harmonic structure." ~ Stanley Clarke'
   }
 ]

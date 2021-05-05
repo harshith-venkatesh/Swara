@@ -7,6 +7,7 @@ import {
   SEARCH_VIDEO,
   WATCH_LATER
 } from '../constants/reducerConstants'
+import { checkItem } from '../utils/checkItem'
 
 const checkVideoExists = (playlist, videoId) =>
   !!playlist.videos.some((_id) => _id === videoId)
@@ -32,12 +33,9 @@ export default function videoReducer(state, { type, payload }) {
           : state.watchLater.concat(payload)
       }
     case ADD_TO_HISTORY:
-      console.log('history')
       return {
         ...state,
-        historyVideos: state.historyVideos.some(
-          (video) => video._id === payload
-        )
+        historyVideos: checkItem(state.historyVideos, payload._id)
           ? state.historyVideos
               .filter((video) => video._id !== payload._id)
               .concat(payload)
