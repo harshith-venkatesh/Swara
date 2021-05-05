@@ -56,46 +56,48 @@ export const VideoPlayer = () => {
             </div>
             <div className='video__player__details'>
               <div className='video__player__details--title'>{title}</div>
-              <div className='video__player__details__description'>
-                {description}
-              </div>
-              <div className='video__player__actions'>
-                <div>
-                  <div className='video__player__details--channel'>
-                    {channel}
-                  </div>
-                  <div className='video__player__details--metadata'>
-                    <span>{views}</span>
-                    <span>{timestamp}</span>
-                  </div>
-                </div>
-                <div>
-                  <button
-                    onClick={() =>
-                      videoDispatch({
-                        type: LIKED_VIDEOS,
-                        payload: selectedVideo
-                      })
-                    }
-                    className='btn btn-outline-primary'
-                  >
-                    {checkItem(videoState?.likedVideos, _id) ? 'LIKED' : 'LIKE'}
-                  </button>
-                  <button
-                    onClick={() =>
-                      videoDispatch({
-                        type: WATCH_LATER,
-                        payload: selectedVideo
-                      })
-                    }
-                    className='btn btn-outline-success'
-                  >
-                    {checkItem(videoState?.watchLater, _id)
-                      ? 'WATCH_LATER_ADDED'
-                      : 'WATCH_LATER'}
-                  </button>
+              <div>
+                <div className='video__player__details--channel'>{channel}</div>
+                <div className='video__player__details--metadata'>
+                  <span>{views}</span>
+                  <span>{timestamp}</span>
                 </div>
               </div>
+            </div>
+          </div>
+          <div className='video__player__details__description'>
+            {description}
+          </div>
+          <div className='video__player__actions'>
+            <div>
+              <button
+                onClick={() =>
+                  videoDispatch({
+                    type: LIKED_VIDEOS,
+                    payload: selectedVideo
+                  })
+                }
+                className='btn btn-outline-primary'
+              >
+                {checkItem(videoState?.likedVideos, _id) ? 'LIKED' : 'LIKE'}
+              </button>
+              <button
+                onClick={() =>
+                  videoDispatch({
+                    type: WATCH_LATER,
+                    payload: selectedVideo
+                  })
+                }
+                className='btn btn-outline-success'
+              >
+                {checkItem(videoState?.watchLater, _id) ? (
+                  <div className='search__input'>
+                    WATCH LATER <i className='fa fa-fas fa-check-circle' />
+                  </div>
+                ) : (
+                  'WATCH LATER'
+                )}
+              </button>
             </div>
           </div>
         </>
