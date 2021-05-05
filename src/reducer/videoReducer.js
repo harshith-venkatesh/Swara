@@ -9,8 +9,6 @@ import {
 } from '../constants/reducerConstants'
 import { checkItem } from '../utils/checkItem'
 
-const checkVideoExists = (playlist, videoId) =>
-  !!playlist.videos.some((_id) => _id === videoId)
 export default function videoReducer(state, { type, payload }) {
   switch (type) {
     case DATA_FROM_SERVER:
@@ -52,7 +50,7 @@ export default function videoReducer(state, { type, payload }) {
         ...state,
         playlists: [...state.playlists].map((playlist) => {
           if (playlist._id === playlistId) {
-            if (checkVideoExists(playlist, videoId)) {
+            if (checkItem(playlist.videosList, videoId)) {
               return {
                 ...playlist,
                 videosList: playlist.videosList.filter((_id) => _id !== videoId)

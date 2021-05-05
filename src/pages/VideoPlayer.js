@@ -47,58 +47,63 @@ export const VideoPlayer = () => {
             />
           </div>
           <div className='video__player__footer'>
-            <div className='video__player__avatar'>
-              <img
-                className='video__player__image__avatar'
-                src={generateImageAvatar(videoId)}
-                alt={title}
-              />
-            </div>
-            <div className='video__player__details'>
-              <div className='video__player__details--title'>{title}</div>
-              <div>
-                <div className='video__player__details--channel'>{channel}</div>
-                <div className='video__player__details--metadata'>
-                  <span>{views}</span>
-                  <span>{timestamp}</span>
+            <div className='video__player__footer__details'>
+              <div className='video__player__avatar'>
+                <img
+                  className='video__player__image__avatar'
+                  src={generateImageAvatar(videoId)}
+                  alt={title}
+                />
+              </div>
+              <div className='video__player__details'>
+                <div className='video__player__details--title'>{title}</div>
+                <div>
+                  <div className='video__player__details--channel'>
+                    {channel}
+                  </div>
+                  <div className='video__player__details--metadata'>
+                    <span>{views}</span>
+                    <span>{timestamp}</span>
+                  </div>
                 </div>
               </div>
+            </div>
+            <div>
+              <button className='btn btn-outline-primary'>Save</button>
             </div>
           </div>
           <div className='video__player__details__description'>
             {description}
           </div>
           <div className='video__player__actions'>
-            <div>
-              <button
-                onClick={() =>
-                  videoDispatch({
-                    type: LIKED_VIDEOS,
-                    payload: selectedVideo
-                  })
-                }
-                className='btn btn-outline-primary'
-              >
-                {checkItem(videoState?.likedVideos, _id) ? 'LIKED' : 'LIKE'}
-              </button>
-              <button
-                onClick={() =>
-                  videoDispatch({
-                    type: WATCH_LATER,
-                    payload: selectedVideo
-                  })
-                }
-                className='btn btn-outline-success'
-              >
-                {checkItem(videoState?.watchLater, _id) ? (
-                  <div className='search__input'>
-                    WATCH LATER <i className='fa fa-fas fa-check-circle' />
-                  </div>
-                ) : (
-                  'WATCH LATER'
-                )}
-              </button>
-            </div>
+            <button
+              onClick={() =>
+                videoDispatch({
+                  type: LIKED_VIDEOS,
+                  payload: selectedVideo
+                })
+              }
+              className='btn btn-outline-primary'
+            >
+              {checkItem(videoState?.likedVideos, _id) ? 'Liked' : 'Like'}
+            </button>
+            <button
+              onClick={() =>
+                videoDispatch({
+                  type: WATCH_LATER,
+                  payload: selectedVideo
+                })
+              }
+              className='btn btn-outline-success'
+            >
+              {checkItem(videoState?.watchLater, _id) ? (
+                <div className='search__input'>
+                  Watch Later <i className='fa fa-fas fa-check-circle' />
+                </div>
+              ) : (
+                'Watch Later'
+              )}
+            </button>
           </div>
         </>
       )}

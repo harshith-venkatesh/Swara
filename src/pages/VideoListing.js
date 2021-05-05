@@ -10,7 +10,7 @@ export const VideoListing = () => {
   const { videoState, videoDispatch } = useVideo()
   const searchResult = (videos, search) => {
     if (search) {
-      videos = [...videos].filter((video) =>
+      videos = videos.filter((video) =>
         video.title.toLowerCase().includes(search)
       )
     }
@@ -34,9 +34,6 @@ export const VideoListing = () => {
         setIsLoading(false)
       }
     })()
-    return () => {
-      console.log('Video Listing rendered')
-    }
   }, [videoState, videoDispatch])
 
   return (
