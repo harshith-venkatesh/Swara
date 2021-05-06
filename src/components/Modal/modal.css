@@ -27,6 +27,13 @@
   z-index: 2;
 }
 
+@media (max-width: 600px) {
+  .modal__div{
+    width: 20rem;
+    margin:40% auto;
+    
+  }
+}
 .modal__footer{
   display: flex
 }
