@@ -1,4 +1,5 @@
 export { MobileNavBar } from './MobileNavBar/MobileNavBar'
 export { NavBar } from './NavBar/NavBar'
+export { SavePlayList } from './SavePlayList/SavePlayList'
 export { SideNavBar } from './SideNavBar/SideNavBar'
 export { VideoCard } from './VideoCard/VideoCard'
