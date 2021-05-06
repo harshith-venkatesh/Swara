@@ -1,3 +1,4 @@
+import { errorToast, successToast } from '../components/Toast/Toast'
 import {
   ADD_TO_PLAYLIST,
   CREATE_PLAYLIST,
@@ -17,6 +18,9 @@ export default function videoReducer(state, { type, payload }) {
         videos: payload
       }
     case LIKED_VIDEOS:
+      state.likedVideos.includes(payload)
+        ? errorToast(`${payload.title} is removed from Liked Videos`)
+        : successToast(`${payload.title} is added to Liked Videos`)
       return {
         ...state,
         likedVideos: state.likedVideos.includes(payload)
@@ -24,6 +28,9 @@ export default function videoReducer(state, { type, payload }) {
           : state.likedVideos.concat(payload)
       }
     case WATCH_LATER:
+      state.watchLater.includes(payload)
+        ? errorToast(`${payload.title} is removed from Watch Later`)
+        : successToast(`${payload.title} is added to Watch Later`)
       return {
         ...state,
         watchLater: state.watchLater.includes(payload)
@@ -40,25 +47,28 @@ export default function videoReducer(state, { type, payload }) {
           : state.historyVideos.concat(payload)
       }
     case CREATE_PLAYLIST:
+      successToast(`${payload.title} playlist is created`)
       return {
         ...state,
-        playlists: [...state.playlist, payload]
+        playlists: [...state.playlists, payload]
       }
     case ADD_TO_PLAYLIST:
-      const { playlistId, videoId } = payload
+      const { playlistId, video } = payload
       return {
         ...state,
         playlists: [...state.playlists].map((playlist) => {
           if (playlist._id === playlistId) {
-            if (checkItem(playlist.videosList, videoId)) {
+            if (checkItem(playlist.videosList, video._id)) {
               return {
                 ...playlist,
-                videosList: playlist.videosList.filter((_id) => _id !== videoId)
+                videosList: playlist.videosList.filter(
+                  (playlistVideo) => playlistVideo._id !== video._id
+                )
               }
             }
             return {
               ...playlist,
-              videosList: playlist.videosList.concat(videoId)
+              videosList: playlist.videosList.concat(video)
             }
           }
           return playlist

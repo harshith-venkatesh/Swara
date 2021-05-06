@@ -4,6 +4,7 @@ import { useVideo } from '../context/VideoContext'
 
 export const Library = () => {
   const { videoState } = useVideo()
+  const { likedVideos, watchLater, historyVideos } = videoState
   return (
     <div>
       <>
@@ -11,10 +12,10 @@ export const Library = () => {
           <div>Liked Videos</div>
         </div>
         <div className='library__container'>
-          {videoState?.likedVideos.length === 0 ? (
+          {likedVideos.length === 0 ? (
             <div>No Videos Found</div>
           ) : (
-            videoState?.likedVideos.map((video) => (
+            likedVideos.map((video) => (
               <VideoCard key={video._id} video={video} />
             ))
           )}
@@ -24,10 +25,10 @@ export const Library = () => {
           <div>Watch Later Videos</div>
         </div>
         <div className='library__container'>
-          {videoState?.watchLater.length === 0 ? (
+          {watchLater.length === 0 ? (
             <div>No Videos Found</div>
           ) : (
-            videoState?.watchLater.map((video) => (
+            watchLater.map((video) => (
               <VideoCard key={video._id} video={video} />
             ))
           )}
@@ -37,10 +38,10 @@ export const Library = () => {
           <div>History</div>
         </div>
         <div className='library__container'>
-          {videoState?.historyVideos.length === 0 ? (
+          {historyVideos.length === 0 ? (
             <div>No Videos Found</div>
           ) : (
-            videoState?.historyVideos.map((video) => (
+            historyVideos.map((video) => (
               <VideoCard key={video._id} video={video} />
             ))
           )}

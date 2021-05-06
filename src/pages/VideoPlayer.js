@@ -1,6 +1,7 @@
 import React from 'react'
 import ReactPlayer from 'react-player'
 import { useNavigate, useParams } from 'react-router-dom'
+import { SavePlayList } from '../components'
 import {
   ADD_TO_HISTORY,
   LIKED_VIDEOS,
@@ -69,7 +70,7 @@ export const VideoPlayer = () => {
               </div>
             </div>
             <div>
-              <button className='btn btn-outline-primary'>Save</button>
+              <SavePlayList video={selectedVideo} />
             </div>
           </div>
           <div className='video__player__details__description'>
