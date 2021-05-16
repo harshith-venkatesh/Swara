@@ -1,8 +1,28 @@
-import React from 'react'
+import axios from 'axios'
+import React, { useEffect } from 'react'
 import { NavLink } from 'react-router-dom'
 import { musicLogo } from '../../constants/Image'
+import { DATA_FROM_SERVER } from '../../constants/reducerConstants'
+import { useVideo } from '../../context/VideoContext'
+import { errorToast } from '../Toast/Toast'
 import './navbar.css'
 export const NavBar = () => {
+  const { videoState, videoDispatch } = useVideo()
+  useEffect(() => {
+    (async () => {
+      try {
+        if (videoState?.videos.length === 0) {
+          const response = await axios.get('/api/videos')
+          videoDispatch({
+            type: DATA_FROM_SERVER,
+            payload: response.data.videosList
+          })
+        }
+      } catch (error) {
+        errorToast('Error while fetching the products')
+      }
+    })()
+  }, [videoState, videoDispatch])
   return (
     <React.Fragment>
       <nav className='navbar-container pr--two'>

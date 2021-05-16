@@ -10,7 +10,8 @@ import { v4 as uuidv4 } from 'uuid'
 export const Modal = ({ show, setShow, video }) => {
   const { videoState, videoDispatch } = useVideo()
   const { playlists } = videoState
-  const [playList, setPlayList] = useState('')
+  const [playList, setPlayList] = useState('');
+  const [showAddPlayList,setShowAddPlayList] = useState(false);
   const checkHandler = (e, playlistId, video) => {
     videoDispatch({ type: ADD_TO_PLAYLIST, payload: { playlistId, video } })
   }
@@ -35,25 +36,32 @@ export const Modal = ({ show, setShow, video }) => {
           <button className='btn--clear' onClick={() => setShow(false)}>
             &times;
           </button>
-          <h1>My Playlist</h1>
+          <div className="saveto__header">Save To</div>
           <div className='modal___body'>
             {playlists.length > 0 &&
               playlists.map(({ _id, title, videosList }) => (
                 <div key={_id}>
-                  <p>
-                    {title}
+                  
+                  <span>
+                    
                     <input
                       type='checkbox'
                       onChange={(e) => checkHandler(e, _id, video)}
                       checked={checkItem(videosList, video._id)}
                     />
-                  </p>
+                    <span className='saveto__title'>{title}</span>
+                  </span>
                 </div>
               ))}
           </div>
-          <div className='modal__footer'>
+          <div className="flex">
+          
+            <button className="playlist-button" onClick={()=> setShowAddPlayList(prev => !prev)}>Create New Playlist</button>
+          </div>
+          {showAddPlayList && (<div className='modal__footer'>
             <input
               type='text'
+              className="modalInput"
               onChange={(e) => setPlayList(e.target.value)}
               placeholder='Create Playlist here'
               value={playList}
@@ -64,7 +72,7 @@ export const Modal = ({ show, setShow, video }) => {
             >
               Add
             </button>
-          </div>
+          </div>)}
         </div>
       </div>
     </>
