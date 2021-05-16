@@ -1,10 +1,12 @@
 import React from 'react'
 import { VideoCard } from '../components'
+import { DELETE_PLAYLIST } from '../constants/reducerConstants'
 import { useVideo } from '../context/VideoContext'
 
 export const PlayLists = () => {
-  const { videoState } = useVideo()
+  const { videoState, videoDispatch } = useVideo()
   const { playlists } = videoState
+
   return (
     <div>
       <>
@@ -13,12 +15,19 @@ export const PlayLists = () => {
         </div>
 
         {playlists.length === 0 ? (
-          <div>No Videos Found</div>
+          <div className='library__container'>No Videos Found</div>
         ) : (
           playlists.map(({ _id, title, videosList }) => (
             <div key={_id}>
-              <div className='page__title'>
-                <div>{title}</div>
+              <div className='playlist__title'>
+                <span>{title}</span>
+                <span onClick={() =>
+                    videoDispatch({ type: DELETE_PLAYLIST, payload: {_id,title} })
+                  }
+                  
+                >
+                 <i className='fa fa-fas fa-trash'></i>
+                </span>
               </div>
               <div className='library__container'>
                 {videosList.length === 0 ? (

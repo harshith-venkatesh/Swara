@@ -6,7 +6,8 @@ import {
   ADD_TO_HISTORY,
   LIKED_VIDEOS,
   SEARCH_VIDEO,
-  WATCH_LATER
+  WATCH_LATER,
+  DELETE_PLAYLIST
 } from '../constants/reducerConstants'
 import { checkItem } from '../utils/checkItem'
 
@@ -38,12 +39,13 @@ export default function videoReducer(state, { type, payload }) {
           : state.watchLater.concat(payload)
       }
     case ADD_TO_HISTORY:
+      const addToHistoryVideos = state.historyVideos
+        .filter((video) => video._id !== payload._id)
+        .concat(payload)
       return {
         ...state,
         historyVideos: checkItem(state.historyVideos, payload._id)
-          ? state.historyVideos
-              .filter((video) => video._id !== payload._id)
-              .concat(payload)
+          ? addToHistoryVideos
           : state.historyVideos.concat(payload)
       }
     case CREATE_PLAYLIST:
@@ -73,6 +75,17 @@ export default function videoReducer(state, { type, payload }) {
           }
           return playlist
         })
+      }
+
+    case DELETE_PLAYLIST:
+      const {_id:playlistID,title}  = payload
+      console.log({playlistID})
+      successToast(`${title} playlist is deleted`)
+      return {
+        ...state,
+        playlists: state.playlists.filter(
+          (playlist) => playlist._id !== playlistID
+        )
       }
 
     case SEARCH_VIDEO:
