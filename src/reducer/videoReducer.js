@@ -39,14 +39,17 @@ export default function videoReducer(state, { type, payload }) {
           : state.watchLater.concat(payload)
       }
     case ADD_TO_HISTORY:
+      const {selectedVideo,timestamp} = payload;
+      const historyVideo = {...selectedVideo,timestamp}
+      console.log({historyVideo});
       const addToHistoryVideos = state.historyVideos
-        .filter((video) => video._id !== payload._id)
-        .concat(payload)
+        .filter((video) => video._id !== selectedVideo._id)
+        .concat(historyVideo)
       return {
         ...state,
-        historyVideos: checkItem(state.historyVideos, payload._id)
+        historyVideos: checkItem(state.historyVideos, selectedVideo._id)
           ? addToHistoryVideos
-          : state.historyVideos.concat(payload)
+          : state.historyVideos.concat(historyVideo)
       }
     case CREATE_PLAYLIST:
       successToast(`${payload.title} playlist is created`)

@@ -1,6 +1,7 @@
 import React from 'react'
 import { VideoCard } from '../components'
 import { useVideo } from '../context/VideoContext'
+import { History } from './History'
 
 export const Library = () => {
   const { videoState } = useVideo()
@@ -34,18 +35,19 @@ export const Library = () => {
           )}
         </div>
         <hr />
-        <div className='page__title'>
+        {/* <div className='page__title'>
           <div>History</div>
         </div>
         <div className='library__container'>
           {historyVideos.length === 0 ? (
             <div>No Videos Found</div>
           ) : (
-            historyVideos.map((video) => (
+            historyVideos.sort((a,b) => b.timestamp-a.timestamp).map((video) => (
               <VideoCard key={video._id} video={video} />
             ))
           )}
-        </div>
+        </div> */}
+        <History />
         <hr />
       </>
     </div>

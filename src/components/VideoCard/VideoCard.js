@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import './videoCard.css'
 export const VideoCard = ({ video }) => {
   const navigate = useNavigate()
-  const { _id, videoId, title, views, timestamp, channel } = video
+  const { _id, videoId, title, views, launchDate, channel } = video
   const generateImage = (id) => {
     return `https://img.youtube.com/vi/${id}/mqdefault.jpg`
   }
@@ -17,7 +17,7 @@ export const VideoCard = ({ video }) => {
       <div
         className='video__card__image__div'
         onClick={() => navigate(`/videos/${_id}`)}
-        data-duration={timestamp}
+        data-duration={launchDate}
       >
         <img
           className='video__card__image'
@@ -38,7 +38,7 @@ export const VideoCard = ({ video }) => {
           <div className='video__card__details--channel'>{channel}</div>
           <div className='video__card__details--metadata'>
             <span>{views}</span>
-            <span>{timestamp}</span>
+            <span>{launchDate}</span>
           </div>
         </div>
       </div>

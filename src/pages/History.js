@@ -4,22 +4,19 @@ import { useVideo } from '../context/VideoContext'
 
 export const History = () => {
   const { videoState } = useVideo()
-  const listedVideos = videoState?.historyVideos
-
+  const {historyVideos} = videoState;
   return (
-    <div>
       <>
         <div className='page__title'>History</div>
-        <div className='video__container'>
-          {listedVideos.length === 0 ? (
+        <div className='library__container'>
+          {historyVideos.length === 0 ? (
             <div>No Videos Found</div>
           ) : (
-            listedVideos.map((video) => (
+            historyVideos.sort((a,b) => b.timestamp-a.timestamp).map((video) => (
               <VideoCard key={video._id} video={video} />
             ))
           )}
         </div>
       </>
-    </div>
   )
 }

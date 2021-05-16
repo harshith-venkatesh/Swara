@@ -25,7 +25,7 @@ export const VideoPlayer = () => {
     title,
     channel,
     views,
-    timestamp,
+    launchDate,
     description
   } = selectedVideo
 
@@ -43,7 +43,7 @@ export const VideoPlayer = () => {
               width='100%'
               controls={true}
               onStart={() =>
-                videoDispatch({ type: ADD_TO_HISTORY, payload: selectedVideo })
+                videoDispatch({ type: ADD_TO_HISTORY, payload: {selectedVideo,timestamp: Date.now()} })
               }
             />
           </div>
@@ -64,7 +64,7 @@ export const VideoPlayer = () => {
                   </div>
                   <div className='video__player__details--metadata'>
                     <span>{views}</span>
-                    <span>{timestamp}</span>
+                    <span>{launchDate}</span>
                   </div>
                 </div>
               </div>
