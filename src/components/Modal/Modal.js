@@ -42,21 +42,21 @@ export const Modal = ({ show, setShow, video }) => {
               playlists.map(({ _id, title, videosList }) => (
                 <div key={_id}>
                   
-                  <span>
+                  
                     
                     <input
                       type='checkbox'
                       onChange={(e) => checkHandler(e, _id, video)}
                       checked={checkItem(videosList, video._id)}
                     />
+                    
                     <span className='saveto__title'>{title}</span>
-                  </span>
+                  
                 </div>
               ))}
           </div>
-          <div className="flex">
-          
-            <button className="playlist-button" onClick={()=> setShowAddPlayList(prev => !prev)}>Create New Playlist</button>
+          <div className="playlist__create__div">
+            <button className="playlist__create__button" onClick={()=> setShowAddPlayList(prev => !prev)}>Create New Playlist</button>
           </div>
           {showAddPlayList && (<div className='modal__footer'>
             <input

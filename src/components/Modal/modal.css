@@ -44,15 +44,26 @@
   margin: 1.25rem 1rem !important;
 }
 
-.playlist-button {
+.playlist__create__button {
   margin: 0 auto;
   cursor: pointer;
+  margin: 0.5rem auto;
   padding: 1rem 2rem;
   border: transparent;
   font-size: 1.2rem;
   text-align: center;
   background-color: #eff;
   color: var(--primary-color)
+}
+
+.modal___body {
+  margin: 1rem auto;
+}
+
+.playlist__create__div {
+  display: flex;
+  border-top: 2px solid grey;
+
 }
 
 @media (max-width: 600px) {
