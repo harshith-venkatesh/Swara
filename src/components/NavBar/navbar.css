@@ -1,0 +1,14 @@
+.video__card__image__avatar{
+  margin: 0.1rem 1rem;
+  border-radius: 50%;
+  width: 3rem;
+  height: 3rem;
+  background-color: #aaa;
+}
+
+.header__title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color:white;
+  margin: 1rem 0.5rem;
+}
